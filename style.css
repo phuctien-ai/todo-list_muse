@@ -12,4 +12,7 @@ li { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1
 li .text { flex: 1; }
 li .edit-btn { background: #f59e0b; }
 li .delete-btn { background: #ef4444; }
+li .save-btn { background: #16a34a; }
+li .cancel-btn { background: #6b7280; }
+li .edit-input { flex: 1; padding: 8px 10px; border: 1px solid #2563eb; border-radius: 8px; font-size: 16px; }
 #empty-state { color: #888; text-align: center; }

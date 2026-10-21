@@ -13,3 +13,4 @@
 - Bước 1: Thêm công việc
 - Bước 2: Sửa công việc
 - Bước 3: Xóa công việc
+- Fix: Sửa trực tiếp trên dòng thay cho prompt() (bị chặn trong khung preview/iframe nên bấm Sửa không có tác dụng), Xóa xác nhận 2 bước trên dòng thay cho confirm()
