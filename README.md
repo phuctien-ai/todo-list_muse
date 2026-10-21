@@ -11,3 +11,4 @@
 ## Lịch sử tính năng (học cách làm việc với GitHub)
 
 - Bước 1: Thêm công việc
+- Bước 2: Sửa công việc

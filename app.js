@@ -1,4 +1,4 @@
-// Todo List - Bước 1: Thêm công việc
+// Todo List - Bước 2: Thêm + Sửa công việc
 const STORAGE_KEY = "todo-list-items";
 
 let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
@@ -21,8 +21,28 @@ function render() {
     span.className = "text";
     span.textContent = todo.text;
     li.appendChild(span);
+
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit-btn";
+    editBtn.textContent = "Sửa";
+    editBtn.addEventListener("click", () => editTodo(todo.id));
+    li.appendChild(editBtn);
+
     list.appendChild(li);
   });
+}
+
+// Sửa công việc
+function editTodo(id) {
+  const todo = todos.find((t) => t.id === id);
+  if (!todo) return;
+  const newText = prompt("Sửa công việc:", todo.text);
+  if (newText === null) return;
+  const trimmed = newText.trim();
+  if (!trimmed) return;
+  todo.text = trimmed;
+  save();
+  render();
 }
 
 // Thêm công việc mới
