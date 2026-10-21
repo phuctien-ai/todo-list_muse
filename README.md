@@ -12,3 +12,4 @@
 
 - Bước 1: Thêm công việc
 - Bước 2: Sửa công việc
+- Bước 3: Xóa công việc

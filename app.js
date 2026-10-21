@@ -1,4 +1,4 @@
-// Todo List - Bước 2: Thêm + Sửa công việc
+// Todo List - Bước 3: Thêm + Sửa + Xóa công việc
 const STORAGE_KEY = "todo-list-items";
 
 let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
@@ -28,6 +28,12 @@ function render() {
     editBtn.addEventListener("click", () => editTodo(todo.id));
     li.appendChild(editBtn);
 
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    deleteBtn.textContent = "Xóa";
+    deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
+    li.appendChild(deleteBtn);
+
     list.appendChild(li);
   });
 }
@@ -41,6 +47,16 @@ function editTodo(id) {
   const trimmed = newText.trim();
   if (!trimmed) return;
   todo.text = trimmed;
+  save();
+  render();
+}
+
+// Xóa công việc
+function deleteTodo(id) {
+  const todo = todos.find((t) => t.id === id);
+  if (!todo) return;
+  if (!confirm(`Xóa công việc "${todo.text}"?`)) return;
+  todos = todos.filter((t) => t.id !== id);
   save();
   render();
 }
