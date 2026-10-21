@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>📝 Todo List</h1>
+    <p class="subtitle">Bước 1: Thêm công việc</p>
+
+    <form id="todo-form">
+      <input id="todo-input" type="text" placeholder="Nhập công việc mới..." autocomplete="off" />
+      <button type="submit">Thêm</button>
+    </form>
+
+    <ul id="todo-list"></ul>
+    <p id="empty-state">Chưa có công việc nào. Thêm công việc đầu tiên ở trên nhé!</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
